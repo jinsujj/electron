@@ -38,7 +38,8 @@
     "build:preload": "tsc --project tsconfig.preload.json",
     "build:renderer": "vite build",
     "build": "yarn build:main && yarn build:preload && yarn build:renderer",
-    "dist": "yarn build && electron-builder"
+    "dist": "yarn build && electron-builder",
+    "tailwind:watch": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
   },
   "devDependencies": {
     "@types/react": "^19.1.8",
@@ -49,6 +50,9 @@
     "electron-builder": "^26.0.12",
     "typescript": "^5.8.3",
     "vite": "^7.0.2",
-    "wait-on": "^8.0.3"
+    "wait-on": "^8.0.3",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.4"
   }
 }
