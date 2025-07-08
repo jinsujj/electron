@@ -34,3 +34,9 @@ yarn tsc --init
 
 "include": ["src"]
 -  TypeScript가 어떤 파일들을 "타입 검사하고 컴파일할지" 결정하는 설정입니다.
+
+
+
+## 배포 
+yarn add -D electron-builder
+

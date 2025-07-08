@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "main": "dist/main/index.js",
   "license": "MIT",
+  "description": "To do list",
+  "author": "jinsujj",
   "dependencies": {
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "sqlite3": "^5.1.7"
   },
   "build": {
     "appId": "com.jinsu.crm",
@@ -28,7 +31,7 @@
   "scripts": {
     "dev:vite": "vite",
     "dev:main": "tsc --project tsconfig.json --watch",
-    "dev:preload": "tsc --project tsconfig.json --watch",
+    "dev:preload": "tsc --project tsconfig.preload.json --watch",
     "dev:electron": "wait-on http://localhost:5173 && electron dist/main/index.js",
     "dev": "concurrently -k \"yarn dev:vite\" \"yarn dev:main\" \"yarn dev:preload\" \"yarn dev:electron\"",
     "build:main": "tsc --project tsconfig.main.json",
