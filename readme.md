@@ -40,3 +40,25 @@ yarn tsc --init
 ## 배포 
 yarn add -D electron-builder
 
+```
+electron-vite/
+  package.json
+  vite.config.ts
+  src/
+    main/         # Electron 메인 프로세스 (Node.js, DB, IPC)
+      db/
+        init.js   # DB 초기화 (현재 비어있음)
+      index.ts    # Electron 메인 엔트리, IPC 핸들러
+    preload/      # Preload 스크립트 (contextBridge, 타입 선언)
+      global.d.ts
+      index.ts
+    renderer/     # 프론트엔드(React)
+      App.tsx
+      index.html
+      main.tsx
+      TodoList.tsx
+```
+
+- main/: Electron 메인 프로세스, DB 접근, IPC 핸들러
+- preload/: Renderer와 main 간 안전한 브릿지, 타입 선언
+- renderer/: React 기반 UI
